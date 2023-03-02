@@ -1,0 +1,4 @@
+build/
+.vs
+.vscode/
+.pi_fi_env.h
