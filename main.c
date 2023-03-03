@@ -6,7 +6,7 @@
 
 void main()
 {
-	// Initialize port for printf output
+	// Initialize  for printf output
 	stdio_init_all();
 
 	// Initialize echo location sensor
@@ -19,16 +19,15 @@ void main()
 		echo_distance = check_distance();
 
 		// If the distance is out of range, blink the LED
-		// roughly 2inches to 12inches
-		if (echo_distance < 6 || echo_distance > 30) // 30cm
+		if (echo_distance > 2 && echo_distance < 400)
 		{
-			blink(750);
+			// print the distance to the serial monitor
+			printf("Distance: %lldcm\r\n", (long long)echo_distance);
+			blink(75);
 		}
 		else
 		{
-			// print the distance to the serial monitor
-			printf("Distance: %fcm\r\n", echo_distance);
-			blink(150);
+			blink(750);
 		}
 
 		sleep_ms(1000);

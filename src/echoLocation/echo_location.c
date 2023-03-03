@@ -9,13 +9,13 @@ uint ECHO_PIN = 26;
 uint TRIG_PIN = 27;
 
 // echo location sensor variables
-float echo_distance = 0;
+double echo_distance = 0;
 
 /// @brief Measures the length (in microseconds) of a pulse on the pin.
 /// @param pin  pin number
 /// @param state state to measure (0 or 1)
 /// @return length of the pulse in microseconds
-unsigned long pulseIn(uint pin, uint state)
+double pulseIn(uint pin, uint state)
 {
     unsigned long width = 0; // keep initialization out of time critical area
 
@@ -31,12 +31,13 @@ unsigned long pulseIn(uint pin, uint state)
         width++;
     }
 
-    return width / 10;
+    // convert the reading to microseconds based on the speed of the clock
+    return width / 12.5;
 }
 
 /// @brief Checks the distance of objects in front of the sensor
 /// @return the distance in centimeters
-float check_distance()
+double check_distance()
 {
     // wite out to trig pin for 2 microseconds at a low level to clear the sensor
     gpio_put(TRIG_PIN, 0);
@@ -45,15 +46,17 @@ float check_distance()
     // write out to trig pin for 10 microseconds at a high level to trigger the sensor
     gpio_put(TRIG_PIN, 1);
     sleep_us(10);
+
     // set the trig pin back to low
     gpio_put(TRIG_PIN, 0);
 
     // read the echo pin to get the pulse width
     // we take the pulse width and divide it by 2 because
     // the pulse goes out and back
-    float pulse_width = pulseIn(ECHO_PIN, 1) / 2;
+    double pulse_width = pulseIn(ECHO_PIN, 1) / 2;
 
-    float _distance_cm = pulse_width / 58;
+    // 58 is the number of microseconds it takes for sound to travel 1cm
+    double _distance_cm = pulse_width / 58.0;
 
     return _distance_cm;
 }

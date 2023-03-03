@@ -10,10 +10,9 @@ extern uint ECHO_PIN;
 extern uint TRIG_PIN;
 
 // Echo location sensor variables
-extern float echo_distance;
-
-unsigned long pulseIn(uint pin, uint state);
-float check_distance(void);
+extern double echo_distance;
+double pulseIn(uint pin, uint state);
+double check_distance(void);
 void init_echo_location(void);
 
 #endif

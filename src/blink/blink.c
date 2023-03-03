@@ -5,6 +5,9 @@
 
 uint LED_PIN = 22; // Doesn't interfere with SPI, I2C, UART, etc.
 
+// Non wifi onboard LED - uncomment code below to use
+// LED_PIN = 25;
+
 /// @brief  Alternates between high and low output on GPIO pin 22 at the specified rate
 /// @param rate Delay between blinks in milliseconds
 void blink(int rate)
