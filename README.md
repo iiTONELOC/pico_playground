@@ -18,7 +18,7 @@ is a development repo for projects using a Raspberry Pi Pico and the C programmi
 - Ensure you have the proper tooling installed on your machine:
 
 To install the required tooling visit the official documentation for the required steps.
-[`Raspberry Pi Pico - Getting Started Guide`](https://datasheets.raspberrypi.com/pico/getting-started-with-pico.pdf) or click on th links below.
+[`Raspberry Pi Pico - Getting Started Guide`](https://datasheets.raspberrypi.com/pico/getting-started-with-pico.pdf) or click on the links below.
 
 - If Linux: [`Go to Chapter 2.2 - The SDK`](https://datasheets.raspberrypi.com/pico/getting-started-with-pico.pdf#%5B%7B%22num%22%3A9%2C%22gen%22%3A0%7D%2C%7B%22name%22%3A%22XYZ%22%7D%2C115%2C841.89%2Cnull%5D)
 - If Mac: [`Go to Chapter 9.1 - Building on Apple macOS`](https://datasheets.raspberrypi.com/pico/getting-started-with-pico.pdf#%5B%7B%22num%22%3A41%2C%22gen%22%3A0%7D%2C%7B%22name%22%3A%22XYZ%22%7D%2C115%2C646.89%2Cnull%5D)
@@ -38,5 +38,5 @@ Follow the build steps for your required tooling and copy the generated UF2 file
 
 ## Examples
 
-- [`Blink`](src\blink\README.md#description)
-- [`Echo Location`](src\echoLocation\README.md#description)
+- [`Blink`](./src/blink/README.md#description)
+- [`Echo Location`](./src/echoLocation/README.md#description)
