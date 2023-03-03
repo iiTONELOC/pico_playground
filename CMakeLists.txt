@@ -4,7 +4,7 @@ cmake_minimum_required(VERSION 3.13)
 include($ENV{PICO_SDK_PATH}/external/pico_sdk_import.cmake)
 
 # Name our project
-project(pico_cam C CXX ASM)
+project(pico_playground C CXX ASM)
 
 # set the correct standards for the pico
 set(CMAKE_C_STANDARD 11)
